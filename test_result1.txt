@@ -1,0 +1,2 @@
+Test failed because of an exception:
+ java.lang.NullPointerException

@@ -1,0 +1,164 @@
+{
+  "Departments": [
+    {
+      "Department": "department 0",
+      "actions": [
+        "Open Course"
+      ],
+      "courseList": [
+        "course 0"
+      ],
+      "studentList": []
+    },
+    {
+      "Department": "department 1",
+      "actions": [
+        "Open Course"
+      ],
+      "courseList": [
+        "course 2"
+      ],
+      "studentList": []
+    },
+    {
+      "Department": "department 2",
+      "actions": [
+        "Open Course"
+      ],
+      "courseList": [
+        "course 1"
+      ],
+      "studentList": []
+    },
+    {
+      "Department": "department 3",
+      "actions": [
+        "Open Course",
+        "Open Course"
+      ],
+      "courseList": [
+        "course 3",
+        "course 4"
+      ],
+      "studentList": []
+    },
+    {
+      "Department": "department department 1",
+      "actions": [
+        "Add Student"
+      ],
+      "courseList": [],
+      "studentList": [
+        "s1"
+      ]
+    },
+    {
+      "Department": "department department 2",
+      "actions": [
+        "Add Student"
+      ],
+      "courseList": [],
+      "studentList": [
+        "s2"
+      ]
+    }
+  ],
+  "Courses": [
+    {
+      "Course": "course 0",
+      "actions": [
+        "Participate In Course",
+        "Participate In Course"
+      ],
+      "availableSpots": "98",
+      "registered": "2",
+      "regStudents": [
+        "s1",
+        "s2"
+      ],
+      "prequisites": []
+    },
+    {
+      "Course": "course 4",
+      "actions": [
+        "Participate In Course",
+        "Participate In Course"
+      ],
+      "availableSpots": "98",
+      "registered": "2",
+      "regStudents": [
+        "s1",
+        "s2"
+      ],
+      "prequisites": []
+    },
+    {
+      "Course": "course 3",
+      "actions": [
+        "Participate In Course",
+        "Participate In Course"
+      ],
+      "availableSpots": "98",
+      "registered": "2",
+      "regStudents": [
+        "s2",
+        "s1"
+      ],
+      "prequisites": []
+    },
+    {
+      "Course": "course 2",
+      "actions": [
+        "Participate In Course",
+        "Participate In Course"
+      ],
+      "availableSpots": "98",
+      "registered": "2",
+      "regStudents": [
+        "s2",
+        "s1"
+      ],
+      "prequisites": []
+    },
+    {
+      "Course": "course 1",
+      "actions": [
+        "Participate In Course",
+        "Participate In Course"
+      ],
+      "availableSpots": "98",
+      "registered": "2",
+      "regStudents": [
+        "s1",
+        "s2"
+      ],
+      "prequisites": []
+    }
+  ],
+  "Students": [
+    {
+      "Student": "s1",
+      "actions": [],
+      "grades": [
+        "(course 0, 81)",
+        "(course 4, 71)",
+        "(course 3, 90)",
+        "(course 2, 84)",
+        "(course 1, 90)"
+      ],
+      "signature": "0"
+    },
+    {
+      "Student": "s2",
+      "actions": [],
+      "grades": [
+        "(course 0, 81)",
+        "(course 4, 75)",
+        "(course 3, 100)",
+        "(course 2, 82)",
+        "(course 1, 93)"
+      ],
+      "signature": "0"
+    }
+  ]
+}
