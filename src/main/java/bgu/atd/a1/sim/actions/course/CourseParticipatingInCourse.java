@@ -33,7 +33,7 @@ public class CourseParticipatingInCourse extends Action<Boolean> {
             if (studentContainCourses.getResult().get() && courseState.getAvailableSpots() > 0) {
                 Action<Boolean> studentUpdateCourseGrade = new StudentUpdateCourseGrade(course, grade);
                 then(Arrays.asList(studentUpdateCourseGrade), () -> {
-                    if (studentUpdateCourseGrade.getResult().get()) {
+                    if (studentUpdateCourseGrade.getResult().get() && courseState.getAvailableSpots() > 0) {
                         courseState.setAvailableSpots(courseState.getAvailableSpots() - 1);
                         courseState.setRegistered(courseState.getRegistered() + 1);
                         courseState.getRegStudents().add(student);

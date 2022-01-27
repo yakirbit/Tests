@@ -14,7 +14,11 @@ public class StudentUnregister extends Action<Boolean> {
     protected void start() {
         // not main action hence we don't do countdown to the latch
         StudentPrivateState studentState = ((StudentPrivateState) getActorState());
-        studentState.removeCourse(course);
-        complete(true);
+        if (studentState.getGrades().keySet().contains(course)) {
+            studentState.removeCourse(course);
+            complete(true);
+        } else {
+            complete(false);
+        }
     }
 }

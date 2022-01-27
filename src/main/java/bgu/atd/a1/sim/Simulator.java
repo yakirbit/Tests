@@ -7,6 +7,7 @@ package bgu.atd.a1.sim;
 
 import java.io.*;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.CountDownLatch;
 
 import bgu.atd.a1.Action;
@@ -42,7 +43,7 @@ public class Simulator {
         Action[] computers = new Action[json.computers.length];
         CountDownLatch lock2 = new CountDownLatch(computers.length);
         for (int i = 0; i < computers.length; i++) {
-            computers[i] = new ComputerOpen(json.computers[i].type, json.computers[i].sig_success, json.computers[i].sig_fail, lock2);
+            computers[i] = new ComputerOpen(json.computers[i].type, json.computers[i].sig_fail, json.computers[i].sig_success, lock2);
             actorThreadPool.submit(computers[i], json.computers[i].type, new ComputerPrivateState());
         }
 
@@ -139,12 +140,11 @@ public class Simulator {
      */
     public static HashMap<String, PrivateState> end() {
         try {
-            Gson gson = new GsonBuilder().setPrettyPrinting().create();
-            FileWriter outputFile = new FileWriter("result.ser");
-            Output outputObject = new Output((HashMap<String, PrivateState>) actorThreadPool.getActors());
-            gson.toJson(outputObject, outputFile);
-            outputFile.close(); // close file after finish writing
             actorThreadPool.shutdown();
+            Map<String, PrivateState> SimulationResult = actorThreadPool.getActors();
+            FileOutputStream fout = new FileOutputStream("result.ser");
+            ObjectOutputStream oos = new ObjectOutputStream(fout);
+            oos.writeObject(SimulationResult);
         } catch (Exception e) {
             e.printStackTrace();
         }
